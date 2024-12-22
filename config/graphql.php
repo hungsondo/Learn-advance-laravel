@@ -75,10 +75,18 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // ExampleQuery::class,
+                'quest' => \App\GraphQL\Queries\Quest\QuestQuery::class,
+                'quests' => \App\GraphQL\Queries\Quest\QuestsQuery::class,
+                'category' => \App\GraphQL\Queries\Category\CategoryQuery::class,
+                'categories' => \App\GraphQL\Queries\Category\CategoriesQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
+                'createQuest' => \App\GraphQL\Mutations\Quest\CreateQuestMutation::class,
+                'updateQuest' => \App\GraphQL\Mutations\Quest\UpdateQuestMutation::class,
+                'deleteQuest' => \App\GraphQL\Mutations\Quest\DeleteQuestMutation::class,
+                'createCategory' => \App\GraphQL\Mutations\Category\CreateCategoryMutation::class,
+                'updateCategory' => \App\GraphQL\Mutations\Category\UpdateCategoryMutation::class,
+                'deleteCategory' => \App\GraphQL\Mutations\Category\DeleteCategoryMutation::class,
             ],
             // The types only available in this schema
             'types' => [
@@ -109,6 +117,8 @@ return [
         // ExampleType::class,
         // ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
+        'Quest' => \App\GraphQL\Types\QuestType::class,
+        'Category' => \App\GraphQL\Types\CategoryType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
