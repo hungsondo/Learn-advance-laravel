@@ -2,8 +2,10 @@
 
 namespace App\GraphQL\Mutations\Quest;
 
+use App\Http\Requests\CreateQuestRequest;
 use App\Models\Quest;
 use GraphQL\Type\Definition\Type;
+use Illuminate\Support\Facades\Validator;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
 
@@ -44,6 +46,16 @@ class CreateQuestMutation extends Mutation
 
     public function resolve($root, $args)
     {
+        // Create an instance of the FormRequest (validation class)
+        $request = new CreateQuestRequest();
+
+        $validator = Validator::make($args, $request->rules(), $request->messages());
+        if ($validator->fails()) {
+            // If validation fails, throw a GraphQL error with the validation messages
+            $validationErrors = $validator->errors()->all();
+            throw new \GraphQL\Error\Error('Validation failed: ' . implode(', ', $validationErrors));
+        }
+
         $quest = new Quest();
         $quest->fill($args);
         $quest->save();
