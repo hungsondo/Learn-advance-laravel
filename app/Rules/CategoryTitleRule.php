@@ -5,18 +5,17 @@ namespace App\Rules;
 use Illuminate\Contracts\Validation\DataAwareRule;
 use Illuminate\Contracts\Validation\Rule;
 
-class QuestTitleRule implements DataAwareRule, Rule
+class CategoryTitleRule implements DataAwareRule, Rule
 {
     protected $data;
-
     /**
      * Create a new rule instance.
      *
-     * @param  int  $reward
      * @return void
      */
     public function __construct()
     {
+        //
     }
 
     public function setData($data)
@@ -33,11 +32,10 @@ class QuestTitleRule implements DataAwareRule, Rule
      */
     public function passes($attribute, $value)
     {
-        $reward = data_get($this->data, "reward", 0);
-        if ($reward >= 1) {
-            return $value && strlen($value) >= 5;
+        $description = data_get($this->data,"description");
+        if ($description == $value) {
+            return false;
         }
-        return true;
     }
 
     /**
@@ -47,6 +45,6 @@ class QuestTitleRule implements DataAwareRule, Rule
      */
     public function message()
     {
-        return 'The title must be at least 5 characters when the reward is greater than 1.';
+        return "title and description cannot be the same";
     }
 }
