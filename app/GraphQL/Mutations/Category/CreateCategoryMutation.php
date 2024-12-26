@@ -37,6 +37,8 @@ class CreateCategoryMutation extends Mutation
 
     public function resolve($root, $args)
     {
+        $name = my_custom_helper('John Doe');
+        dd($name);
         $request = new CreateCategoryRequest();
         $validator = Validator::make($args, $request->rules(), $request->messages());
         if ($validator->fails()) {
