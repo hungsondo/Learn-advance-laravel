@@ -26,8 +26,8 @@ class QuestsQuery extends Query
                 'name' => 'id',
                 'type' => Type::int(),
             ],
-            'name' => [
-                'name' => 'name',
+            'title' => [
+                'name' => 'title',
                 'type' => Type::string(),
             ],
         ];
@@ -41,8 +41,8 @@ class QuestsQuery extends Query
             $query->where('id', $args['id']);
         }
 
-        if (isset($args['name'])) {
-            $query->where('name', 'like', '%' . $args['name'] . '%');
+        if (isset($args['title'])) {
+            $query->where('title', 'like', '%' . $args['title'] . '%');
         }
 
         return $query->get();
