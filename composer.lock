@@ -3164,16 +3164,16 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "8.6-dev"
-                },
                 "laravel": {
-                    "providers": [
-                        "Rebing\\GraphQL\\GraphQLServiceProvider"
-                    ],
                     "aliases": {
                         "GraphQL": "Rebing\\GraphQL\\Support\\Facades\\GraphQL"
-                    }
+                    },
+                    "providers": [
+                        "Rebing\\GraphQL\\GraphQLServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "8.6-dev"
                 }
             },
             "autoload": {
