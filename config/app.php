@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Hungsondo\TarotReader\Providers\TarotReaderProvider::class,
 
         /*
          * Application Service Providers...
