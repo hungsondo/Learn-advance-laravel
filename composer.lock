@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb7c0fd840d0ffd34d64245d3759825f",
+    "content-hash": "971d9bcfec41a65560a432d7fae3de04",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1032,6 +1032,41 @@
                 }
             ],
             "time": "2024-07-18T11:15:46+00:00"
+        },
+        {
+            "name": "hungsondo/tarot-reader",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hungsondo/tarot-reader.git",
+                "reference": "7e4648e2d0f561b65839dba93ee37c2612421f9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hungsondo/tarot-reader/zipball/7e4648e2d0f561b65839dba93ee37c2612421f9b",
+                "reference": "7e4648e2d0f561b65839dba93ee37c2612421f9b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hungsondo\\TarotReader\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "dhson2",
+                    "email": "hungsondo1999@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/hungsondo/tarot-reader/tree/1.0.0",
+                "issues": "https://github.com/hungsondo/tarot-reader/issues"
+            },
+            "time": "2024-12-29T08:49:16+00:00"
         },
         {
             "name": "laragraph/utils",
