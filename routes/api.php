@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TarotController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('pick-cards', [TarotController::class,'pickCards']);
+Route::post('get-result', [TarotController::class,'getResult']);
+
