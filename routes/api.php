@@ -22,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('pick-cards', [TarotController::class,'pickCards']);
 Route::post('get-result', [TarotController::class,'getResult']);
 
+
+Route::get('test', [TarotController::class,'test']);
+
