@@ -43,8 +43,6 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: Wait for MySQL
       run: sleep 15s
-    - name: Debug MySQL Connection
-      run: mysql -h 127.0.0.1 -uuser -ppassword -e "SHOW DATABASES;"
     - name: Run Migrations
       run: php artisan migrate --env=testing --force
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
