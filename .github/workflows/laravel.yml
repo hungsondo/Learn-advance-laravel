@@ -17,11 +17,11 @@ jobs:
           MYSQL_DATABASE: test
           MYSQL_USER: user
           MYSQL_PASSWORD: 123456
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: 123456
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root --password=root"
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root --password=123456"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
@@ -43,8 +43,6 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: Wait for MySQL
       run: sleep 15s
-    - name: Debug MySQL Connection
-      run: mysql -h 127.0.0.1 -uuser -ppassword -e "SHOW DATABASES;"
     - name: Run Migrations
       run: php artisan migrate --env=testing --force
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
