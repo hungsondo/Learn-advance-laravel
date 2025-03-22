@@ -17,11 +17,11 @@ jobs:
           MYSQL_DATABASE: test
           MYSQL_USER: user
           MYSQL_PASSWORD: 123456
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: 123456
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root --password=root"
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root --password=123456"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
