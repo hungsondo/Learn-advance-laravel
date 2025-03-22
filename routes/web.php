@@ -1,5 +1,7 @@
 <?php
 
+use App\Jobs\SendEmailJob;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/send-mail', function () {
+    $email = "user@example.com";
+    SendEmailJob::dispatch($email);
+    echo "Email is sent!";
 });

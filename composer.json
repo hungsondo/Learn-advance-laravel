@@ -9,15 +9,18 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "brianium/paratest": "^6.11",
         "elasticsearch/elasticsearch": "^8.17",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "hungsondo/tarot-reader": "^2.0",
         "laravel/framework": "^8.75",
+        "laravel/passport": "^10.4",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
         "mll-lab/laravel-graphiql": "^2.0",
+        "predis/predis": "^2.3",
         "rebing/graphql-laravel": "^8.6"
     },
     "require-dev": {
