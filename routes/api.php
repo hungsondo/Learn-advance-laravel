@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BankAccountController;
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\TarotController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,3 +33,6 @@ Route::get('bank-account/{id}', [BankAccountController::class,'getById']);
 Route::delete('bank-account/{id}', [BankAccountController::class,'delete']);
 Route::put('bank-account/{id}', [BankAccountController::class,'update']);
 Route::post('bank-account/', [BankAccountController::class,'create']);
+
+Route::resource('houses', HouseController::class)->except(['show']);
+Route::get('houses/search', [HouseController::class,'search']);
