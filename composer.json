@@ -14,6 +14,7 @@
         "elasticsearch/elasticsearch": "^8.17",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hungsondo/qr-code-generator": "^1.0",
         "hungsondo/tarot-reader": "^2.0",
         "laravel/framework": "^8.75",
         "laravel/passport": "^10.4",
