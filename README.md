@@ -2,3 +2,4 @@
 - Mysql
 - rebing/graphql-laravel
 - Elastic Search, set up like at the Elastic Search homepage
+- Use custom package
