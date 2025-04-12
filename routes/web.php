@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TarotController;
 use App\Jobs\SendEmailJob;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,7 @@ Route::get('/send-mail', function () {
     SendEmailJob::dispatch($email);
     echo "Email is sent!";
 });
+
+
+Route::get('IPN', [TarotController::class,'handlePaymentNotification']);
+Route::get('payment-result', [TarotController::class,'handlePaymentResult']);
