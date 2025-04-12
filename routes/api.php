@@ -26,7 +26,7 @@ Route::get('pick-cards', [TarotController::class,'pickCards']);
 Route::post('get-result', [TarotController::class,'getResult']);
 
 
-Route::get('test', [TarotController::class,'test']);
+// Route::get('test', [TarotController::class,'test']);
 
 
 Route::get('bank-account/search', [BankAccountController::class,'search']);
@@ -38,4 +38,10 @@ Route::post('bank-account/', [BankAccountController::class,'create']);
 Route::resource('houses', HouseController::class)->except(['show']);
 Route::get('houses/search', [HouseController::class,'search']);
 
+<<<<<<< Updated upstream
 Route::get('qr-generate', QrController::class);
+=======
+
+Route::post('buy-cards', [TarotController::class,'buy']);
+Route::get('log', [TarotController::class,'handlePaymentNotification']);
+>>>>>>> Stashed changes
